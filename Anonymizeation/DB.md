@@ -1,4 +1,4 @@
-# Main 
+# Main  Schema
 
 ## Here is the schema for the given tables:
 * `Employee` table with the following columns:
@@ -10,7 +10,7 @@
     EmployeeId (string)
   
 *  `users` table:
-    email (string)
+    email (string) 
     first_name (string)
     last_name (string)
     updated_at (datetime)
