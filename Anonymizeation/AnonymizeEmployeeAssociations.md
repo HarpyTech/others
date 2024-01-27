@@ -1,10 +1,12 @@
-# 
-##
+# Anonymize Employee Associations
+## This Class will anonymize the real values with generated faked data in the Employee Table to other tables in the DB
 
 ```JAVA
 import com.github.javafaker.Faker;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +15,9 @@ public class AnonymizeEmployeeAssociations {
 
     @Autowired
     private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
     private final Faker faker = new Faker();
     private final Map<String, String> employee = new HashMap<>();
     private final Map<String, String> additionalIndexes = new HashMap<>();
@@ -50,6 +55,31 @@ public class AnonymizeEmployeeAssociations {
         System.out.println("Completed Safeguard::Result Records at " + new Date());
         updateMailQueue();
         System.out.println("Completed MailQueue Records at " + new Date());
+    }
+
+    public void addIndexes() {
+        // These indexes are added to speed up the SQL query on joining tables
+        additionalIndexes.forEach((column, table) -> {
+            String indexExistsQuery = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS WHERE table_name = ? AND index_name = ?";
+            int indexExists = jdbcTemplate.queryForObject(indexExistsQuery, new Object[]{table, column}, Integer.class);
+
+            if (indexExists == 0) {
+                String addIndexQuery = "CREATE INDEX " + column + " ON " + table + " (" + column + ")";
+                jdbcTemplate.execute(addIndexQuery);
+            }
+        });
+    }
+
+    public void dropIndexes() {
+        additionalIndexes.forEach((column, table) -> {
+            String indexExistsQuery = "SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS WHERE table_name = ? AND index_name = ?";
+            int indexExists = jdbcTemplate.queryForObject(indexExistsQuery, new Object[]{table, column}, Integer.class);
+
+            if (indexExists > 0) {
+                String removeIndexQuery = "DROP INDEX " + column + " ON " + table;
+                jdbcTemplate.execute(removeIndexQuery);
+            }
+        });
     }
 
     public void updateUsers() {
