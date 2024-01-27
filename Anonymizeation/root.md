@@ -1,7 +1,14 @@
 # Main 
 
 ## Here is the schema for the given tables:
-
+* `Employee` table with the following columns:
+    id (integer)
+    FirstName (string)
+    LastName (string)
+    Email (string)
+    full_name (string)
+    EmployeeId (string)
+  
 *  `users` table:
     email (string)
     first_name (string)
