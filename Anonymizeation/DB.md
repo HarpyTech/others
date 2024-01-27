@@ -18,12 +18,6 @@
     last_name (string),
     updated_at (datetime)
    
-* `MoveEmployee` table:
-    employee_id (integer) is foreign key and refers to Employee.id column,
-    empFirstName (string),
-    empLastName (string),
-    empEmail (string),
-    modifiedDate (datetime)
   
 * `SeatOpenBooking` table:
     checkInByEmail (string) is foreign key and refers to Employee.Email column,
@@ -45,15 +39,6 @@
     email (string) is foreign key and refers to Employee.Email column,
     updated_at (datetime)
   
-* `mail_queues` table:
-    fromName (string)
-    fromAddress (string) is foreign key and refers to Employee.Email column,
-    toName (string),
-    toAddress (string),
-    subject (string),
-    content (string),
-    deliveredDate (datetime)
-  
 * `anonymized_sensitive_values` table:
     old_email (string),
     new_email (string),
@@ -64,3 +49,6 @@
     employee_id (integer),
     old_full_name (string),
     new_full_name (string)
+
+![Screenshot 2024-01-27 144545](https://github.com/HarpyTech/others/assets/77878864/cab2124e-8c23-421b-bbad-bcffa3168410)
+![Screenshot 2024-01-27 144559](https://github.com/HarpyTech/others/assets/77878864/626ab4ef-2f09-4542-bf34-952066c0bfdd)
