@@ -50,5 +50,21 @@
     old_full_name (string),
     new_full_name (string)
 
-![Screenshot 2024-01-27 144545](https://github.com/HarpyTech/others/assets/77878864/cab2124e-8c23-421b-bbad-bcffa3168410)
-![Screenshot 2024-01-27 144559](https://github.com/HarpyTech/others/assets/77878864/626ab4ef-2f09-4542-bf34-952066c0bfdd)
+
+![Sequence Diagram](https://github.com/HarpyTech/others/assets/77878864/9cf4a523-504c-4177-b884-86c07356475d)
+![Sequence Diagram D](https://github.com/HarpyTech/others/assets/77878864/976cdf3c-126e-4efb-b644-32ccec667ce0)
+![Screenshot 2024-01-27 144559](https://github.com/HarpyTech/others/assets/77878864/d64626d7-9243-4d73-9669-00438146f203)
+![Screenshot 2024-01-27 144545](https://github.com/HarpyTech/others/assets/77878864/3380a552-7172-45da-972d-09058460d165)
+![Screenshot 2024-01-27 143645](https://github.com/HarpyTech/others/assets/77878864/8189c0a7-2834-4d0d-b6e0-01dbf32114a2)
+![Screenshot 2024-01-27 143619](https://github.com/HarpyTech/others/assets/77878864/a308ca0b-422f-4225-a80f-c78a4a705945)
+![Screenshot 2024-01-27 142528](https://github.com/HarpyTech/others/assets/77878864/058bd34c-ea6c-4127-85a8-77c5e51d9752)
+![Screenshot 2024-01-27 142449](https://github.com/HarpyTech/others/assets/77878864/fa185dfc-29d1-4cd2-be15-0e0b0f2c314e)
+![Screenshot 2024-01-27 141906](https://github.com/HarpyTech/others/assets/77878864/11057ed1-8f51-4132-9d1c-a2591db2410c)
+![Screenshot 2024-01-27 141851](https://github.com/HarpyTech/others/assets/77878864/2845d905-1bd4-4c16-a044-45a29c4f6ee3)
+![Screenshot 2024-01-27 141636](https://github.com/HarpyTech/others/assets/77878864/b5e71210-7e0e-47c1-a06c-ee4b6fc142cc)
+
+
+
+
+
+
