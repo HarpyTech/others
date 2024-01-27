@@ -21,19 +21,20 @@ import java.time.format.DateTimeFormatter;
 public class SensitiveDataAnonymizer {
 
     private final Faker faker = new Faker();
-    @Autowired
-    private final ExecutorService executorService;
+
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
     private String scriptUpdateTime;
     private String lineBreak;
+    private ExecutorService executorService;
     private AnonymizeEmployeeAssociations employeeAssociation;
 
     public SensitiveDataAnonymizer() {
         this.scriptUpdateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         this.lineBreak = "-".repeat(100);
         this.employeeAssociation = new AnonymizeEmployeeAssociations(scriptUpdateTime);
+        this.executorService = Executors.newFixedThreadPool(8);
         printClassNames();
     }
 
