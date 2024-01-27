@@ -7,7 +7,10 @@
     LastName (string),
     Email (string),
     full_name (string),
-    EmployeeId (string)
+    EmployeeId (string),
+    Bio (string),
+    WorkPhone (string),
+    Extension (string)
   
 *  `users` table:
     email (string) is foreign key and refers to Employee.Email column, 
